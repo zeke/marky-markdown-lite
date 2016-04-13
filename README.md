@@ -15,7 +15,7 @@ npm install marky-markdown-lite --save
 ## Usage
 
 ```js
-const marky = require("marky-markdown-lite")
+const marky = require('marky-markdown-lite')
 
 // Give marky a markdown string:
 var $ = marky('## Some Heading')
