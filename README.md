@@ -2,7 +2,7 @@
 
 A version of marky-markdown that does less.
 
-This little module converts markdown to HTML with [markdown-it](https://github.com/markdown-it/markdown-it) (a fast and CommonMark compliant parser), then parses that HTML into a queryable DOM object using [cheerio](https://github.com/cheeriojs/cheerio.
+This little module converts markdown to HTML with [markdown-it](https://github.com/markdown-it/markdown-it) (a fast and CommonMark compliant parser), then parses that HTML into a queryable DOM object using [cheerio](https://github.com/cheeriojs/cheerio).
 
 This module is inspired by [marky-markdown](https://github.com/npm/marky-markdown), and has a very similar API. It does less, but has a much smaller dependency footprint because it doesn't rely on any native C++ modules. If you need syntax highlighting, sanitized HTML, short emoji support, etc, use marky-markdown.
 
