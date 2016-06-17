@@ -3,6 +3,7 @@ const fs = require('fs')
 const isFile = require('is-file')
 const cheerio = require('cheerio')
 const markdown = require('markdown-it')()
+  .use(require('markdown-it-named-headers'))
 
 module.exports = function marky (input) {
   if (isFile(input)) {
