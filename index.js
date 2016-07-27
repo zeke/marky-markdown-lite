@@ -9,5 +9,11 @@ module.exports = function marky (input) {
   if (isFile(input)) {
     input = fs.readFileSync(input, 'utf8')
   }
-  return cheerio.load(markdown.render(input))
+  const $ = cheerio.load(markdown.render(input))
+
+  $('h1,h2,h3,h4,h5,h6').each(function (i, el) {
+    $(el).attr('title', $(el).text())
+  })
+
+  return $
 }

@@ -15,6 +15,8 @@ tape('marky-markdown-lite', function(t){
   $ = marky(fixturePath)
   t.equal($('h1').text(), 'I am a heading', 'accepts a markdown filename as input')
 
+  t.equal($('h1').attr('title'), 'I am a heading', 'sets heading titles to their textContent')
+
   t.equal($('h1').attr('id'), 'i-am-a-heading', 'adds slugified DOM ids to heading elements')
 
   t.end()
