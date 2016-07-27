@@ -1,3 +1,11 @@
+<a name="1.2.0"></a>
+# 1.2.0 (2016-07-27)
+
+* add a changelog ([1e64c03](https://github.com/zeke/marky-markdown-lite/commit/1e64c03))
+* store textContent of all heading tags in title attributes so they can be accessed using CSS selector ([1e1481e](https://github.com/zeke/marky-markdown-lite/commit/1e1481e))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2016-06-17)
 
