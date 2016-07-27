@@ -4,6 +4,8 @@
   "description": "A version of marky-markdown that does less",
   "main": "index.js",
   "scripts": {
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "pretest": "npm run changelog",
     "test": "node test.js | tap-spec"
   },
   "repository": {
@@ -30,6 +32,7 @@
   },
   "dependencies": {
     "cheerio": "^0.20.0",
+    "conventional-changelog-cli": "^1.2.0",
     "is-file": "^1.0.0",
     "markdown-it": "^6.0.1",
     "markdown-it-named-headers": "0.0.4"
