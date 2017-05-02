@@ -2,10 +2,12 @@ const path = require('path')
 const fs = require('fs')
 const isFile = require('is-file')
 const cheerio = require('cheerio')
-const markdown = require('markdown-it')()
-  .use(require('markdown-it-named-headers'))
+const md = require('markdown-it')
 
-module.exports = function marky (input) {
+module.exports = function marky (input, opts = {}) {
+  const markdown = md(opts)
+    .use(require('markdown-it-named-headers'))
+
   if (isFile(input)) {
     input = fs.readFileSync(input, 'utf8')
   }
