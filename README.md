@@ -4,7 +4,7 @@ A version of marky-markdown that does less.
 
 This little module converts markdown to HTML with [markdown-it](https://github.com/markdown-it/markdown-it) (a fast and CommonMark compliant parser), then parses that HTML into a queryable DOM object using [cheerio](https://github.com/cheeriojs/cheerio).
 
-This module is inspired by [marky-markdown](https://github.com/npm/marky-markdown), and has a very similar API. It does less, but has a much smaller dependency footprint because it doesn't rely on any native C++ modules. If you need syntax highlighting, sanitized HTML, short emoji support, etc, use marky-markdown.
+This module is inspired by [marky-markdown](https://github.com/npm/marky-markdown), and has a very similar API. It does less, but has a much smaller dependency footprint because it doesn't rely on any native C++ modules. If you need syntax highlighting, sanitized HTML, short emoji support, etc, use underlying `markdown-it` [options](https://markdown-it.github.io/markdown-it/), see below.
 
 ## Installation
 
@@ -36,6 +36,18 @@ var $ = marky('some/markdown/file.md')
 npm install
 npm test
 ```
+
+## markdown-it options example
+
+```js
+var opts = {
+  html: true
+}
+
+var $ = marky('- Some list item <a href="item.html">item</a>', opts)
+
+```
+For all `markdown-it` [options](https://markdown-it.github.io/markdown-it/).
 
 ## Dependencies
 
