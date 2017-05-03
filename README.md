@@ -4,7 +4,7 @@ A version of marky-markdown that does less.
 
 This little module converts markdown to HTML with [markdown-it](https://github.com/markdown-it/markdown-it) (a fast and CommonMark compliant parser), then parses that HTML into a queryable DOM object using [cheerio](https://github.com/cheeriojs/cheerio).
 
-This module is inspired by [marky-markdown](https://github.com/npm/marky-markdown), and has a very similar API. It does less, but has a much smaller dependency footprint because it doesn't rely on any native C++ modules. If you need syntax highlighting, sanitized HTML, short emoji support, etc, use marky-markdown.
+This module is inspired by [marky-markdown](https://github.com/npm/marky-markdown), and has a very similar API. It does less, but has a much smaller dependency footprint because it doesn't rely on any native C++ modules. If you need syntax highlighting, sanitized HTML, short emoji support, etc, use underlying `markdown-it` [options](https://markdown-it.github.io/markdown-it/#MarkdownIt.new), see **Options** below.
 
 ## Installation
 
@@ -35,6 +35,29 @@ var $ = marky('some/markdown/file.md')
 ```sh
 npm install
 npm test
+```
+
+## Options
+
+You can use all the `markdown-it` [options](https://markdown-it.github.io/markdown-it/#MarkdownIt.new).
+
+#### syntax
+
+`marky ( input [, options] )`
+
+- **input** (String) - Source string (could be also a path to a markdown file)
+- **options** (Object) - `markdown-it` options
+
+##### Accept HTML example
+
+```js
+var opts = {
+  html: true
+}
+
+var $ = marky('- Some list item <a href="item.html">here</a>', opts)
+
+console.log( $('ul li a').attr('href') ) // Outputs: 'item.html'
 ```
 
 ## Dependencies
