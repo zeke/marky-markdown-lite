@@ -1,3 +1,10 @@
+<a name="1.3.0"></a>
+# 1.3.0 (2017-05-03)
+
+* add access to underlying markdown-it options ([c52d7c3](https://github.com/zeke/marky-markdown-lite/commit/c52d7c3))
+
+
+
 <a name="1.2.0"></a>
 # 1.2.0 (2016-07-27)
 
@@ -21,6 +28,3 @@
 * one point oh ([9746806](https://github.com/zeke/marky-markdown-lite/commit/9746806))
 * readme touch-ups ([2e222bb](https://github.com/zeke/marky-markdown-lite/commit/2e222bb))
 * single quotes ([8e374d5](https://github.com/zeke/marky-markdown-lite/commit/8e374d5))
-
-
-
