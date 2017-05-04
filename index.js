@@ -4,7 +4,9 @@ const isFile = require('is-file')
 const cheerio = require('cheerio')
 const markdown = require('markdown-it')
 
-module.exports = function marky (input, opts = {}) {
+module.exports = function marky (input, opts) {
+  opts = (typeof opts !== 'undefined') ?  opts : {}
+  
   const md = markdown(opts)
     .use(require('markdown-it-named-headers'))
 
