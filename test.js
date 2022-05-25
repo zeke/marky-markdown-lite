@@ -5,6 +5,7 @@ const marky = require('./')
 
 const fixturePath = path.join(__dirname, 'fixture.md')
 const sampleMarkdown = fs.readFileSync(fixturePath, 'utf8')
+const markdownWithHTML = `- Some list item <a href="item.html">here</a>`
 
 tape('marky-markdown-lite', function(t){
   t.equal(typeof marky, 'function', 'is a function')
@@ -18,6 +19,12 @@ tape('marky-markdown-lite', function(t){
   t.equal($('h1').attr('title'), 'I am a heading', 'sets heading titles to their textContent')
 
   t.equal($('h1').attr('id'), 'i-am-a-heading', 'adds slugified DOM ids to heading elements')
+
+  t.comment('Accepts an object with markdown-it options like `{html:true}`')
+  var $ = marky(markdownWithHTML, {html:true})
+  t.equal($('ul li').text(), 'Some list item here', 'enable HTML tags in source (by not escaping them)')
+
+  t.equal($('ul li a').attr('href'), 'item.html', 'let access to attributes in HTML tags')
 
   t.end()
 })
